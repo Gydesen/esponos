@@ -8,6 +8,18 @@
 #include <WiFiClient.h>
 #include <PubSubClient.h>
 
+
+//Rotary Stuff
+#include <Button2.h>              
+#include <ESPRotary.h>
+
+#include "helpers/hlpr_rotary.h"
+//Rotary Stuff
+
+
+
+
+
 #include "my_user_config.h"
 #include "helpers/hlpr_mqtt.h"
 #include "helpers/hlpr_display.h"
@@ -37,9 +49,24 @@ void setup() {
     display.begin(SSD1306_SWITCHCAPVCC, SCREEN_ADDRESS); // Address 0x3C for 128x32
     Serial.println("we have defined USE_DISPLAY");
   #endif
+
+  //Rotary Stuff
+  r.begin(ROTARY_PIN1, ROTARY_PIN2, CLICKS_PER_STEP);
+  r.setChangedHandler(rotate);
+  r.setLeftRotationHandler(showDirection);
+  r.setRightRotationHandler(showDirection);
+  b.begin(BUTTON_PIN);
+  b.setTapHandler(click);
+  b.setLongClickHandler(resetPosition);
+  //Rotary Stuff
   
 }
 void loop() {
+  r.loop();
+  b.loop();
+
+
+  
   hlpr_display();
 
   if (!client.connected()) {

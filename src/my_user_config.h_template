@@ -9,7 +9,7 @@
 // MQTT
 //
 //
-#define MQTT_SERVER         "192.168.1.31"
+#define MQTT_SERVER         "8.8.8.8"
 #define MQTT_PORT           1883
 #define MQTT_TOPIC          "sonos/"
 
