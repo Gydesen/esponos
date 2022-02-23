@@ -14,8 +14,6 @@
 #define MQTT_TOPIC          "sonos/"
 
 // Display Stuf
-//
-//
 #define USE_DISPLAY         TRUE
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
