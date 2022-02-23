@@ -4,9 +4,7 @@
 .vscode/launch.json
 .vscode/ipch
 src/my_user_config.h
-workspace.code-workspace
+esponos.code-workspace
 .test
 .lib
 .include
-.gitignore
-
