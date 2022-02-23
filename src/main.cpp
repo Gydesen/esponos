@@ -8,7 +8,6 @@
 #include <WiFiClient.h>
 #include <PubSubClient.h>
 
-
 //Rotary Stuff
 #include <Button2.h>              
 #include <ESPRotary.h>
