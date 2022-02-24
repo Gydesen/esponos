@@ -68,6 +68,8 @@ void loop() {
   
   hlpr_display();
 
+  
+
   if (!client.connected()) {
     reconnect();
   }
